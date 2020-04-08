@@ -2,6 +2,16 @@
 {% extends "blog/base.html" %}
 
 
-          {% block body %}
-                    
+          {% block body_block %}
+                <div class="container">
+                    <a class="btn btn-primary active" href="{% url 'create' %}" style="float:right;">Create New Post</a><br><br>
+                </div>
+              {% for i in key %}
+                <div class="conatiner">
+                      <a href=""><h3>{{ i.title }}</h3></a>
+                    <p><h6>Description: {{ i.description }}</h6></p><br>
+                </div>
+                <br><br>
+              {% endfor %}
+
           {% endblock %}
